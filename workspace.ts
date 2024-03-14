@@ -21,7 +21,7 @@ interface Data {
  * @description we can also redeclare with same name with different property or method
  */
 interface Data {
-    asdfasdf: string;
+    dummy: string;
 }
 
 interface Data1 {
@@ -41,7 +41,7 @@ const de: Information = {
     formatedString: '',
     input: 'input',
     input1: 'input 1',
-    asdfasdf: 'adsfasdf',
+    dummy: 'adsfasdf',
     getValue() {
         return this.input
     },
@@ -83,17 +83,51 @@ type data3 = {
  * @description same like interface key word we can extend the use 'and operator &'
  */
 type information = data2 & data3 & {
-    asdfasdf: string;
+    dummy: string;
 }
 
 const te: information = {
     input1: 'input 1',
     input: 'input',
-    asdfasdf: 'aaaaaaaaa',
+    dummy: 'aaaaaaaaa',
     getValue() {
         return this.input
     },
     getValue1() {
         return this.input
     }
+}
+
+/**
+ * @description we can combine Both interface and Type using "And operator &"
+ */
+type t1 = Data & data2
+
+/**
+ * @description we can combine Both interface and Type using "extends"
+ */
+interface t2 extends  data2 {
+    dummy: string;
+}
+
+/**
+ * @description we are use the t1 combination of the t1 using And operator
+ */
+const t1d: t1 = {
+    dummy: 'string',
+    getValue(){
+        return this.dummy;
+    },
+    input: 'string'
+}
+
+/**
+ * @description we are use the t2 combination of the t2 extends data2 using extend keyword
+ */
+const t2d: t2 = {
+    dummy: 'string',
+    getValue(){
+        return this.dummy;
+    },
+    input: 'string'
 }
