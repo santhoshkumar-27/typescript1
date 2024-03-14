@@ -8,4 +8,4 @@ type Shadow = typeof DDD;
 
 type Weightkey = keyof Shadow;
 
-type WeightValue = (typeof DDD)[Weightkey];
+type WeightValue = (Shadow)[Weightkey];
