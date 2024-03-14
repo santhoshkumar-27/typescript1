@@ -50,3 +50,50 @@ const de: Information = {
     }
 };
 
+/**
+ * @description we can assign the structure of object with the help of typeof
+ */
+type DE = typeof de;
+
+/**
+ * @description in type we define like a assigning a value to the type
+ */
+type data2 = {
+    input: string;
+    getValue(): string;
+}
+
+
+/**
+ * @description in type we not able to declare with same identifier and it
+ * throws errors
+ */
+
+// type data2 = {
+//     input: string;
+//     getValue(): string;
+// }
+
+type data3 = {
+    input1: string;
+    getValue1(): string;
+}
+
+/**
+ * @description same like interface key word we can extend the use 'and operator &'
+ */
+type information = data2 & data3 & {
+    asdfasdf: string;
+}
+
+const te: information = {
+    input1: 'input 1',
+    input: 'input',
+    asdfasdf: 'aaaaaaaaa',
+    getValue() {
+        return this.input
+    },
+    getValue1() {
+        return this.input
+    }
+}
